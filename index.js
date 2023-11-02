@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 const jobs = require("./jobData/JobData.json")
 
 app.use(cors());
+app.use(express());
 
 app.get("/", (req, res)=>{
     res.send("Job Server is running Well....")
