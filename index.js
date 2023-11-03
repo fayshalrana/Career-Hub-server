@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 // const jobs = require("./jobData/JobData.json")
 
 app.use(cors());
-app.use(express());
+app.use(express.json());
 const dotenv = require('dotenv').config();
 
 
@@ -75,7 +75,7 @@ async function run() {
     );
   } finally {
     // Ensures that the client will close when you finish/error
-    // await client.close();
+    await client.close();
   }
 }
 run().catch(console.log);
